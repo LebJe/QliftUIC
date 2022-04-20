@@ -10,13 +10,15 @@ Splitted from main QLift repo.
 Add dependency to your swift package manifest: 
 ```swift
     dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0"),
+        .package(url: "https://github.com/DimaRU/QliftUIC", branch: "master"),
     ],
 
 ```
 Then add plugin to target declaration:
 ```swift
-.plugin(name: "QliftUICPlugin", capability: .buildTool(), dependencies: ["qlift-uic"])
+plugins: [
+    .plugin(name: "QliftUICPlugin", package: "QliftUIC"),
+]
 ```
 and .ui files to your target. These files will be automatically converted to .swift during build process. 
 
